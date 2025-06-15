@@ -8,5 +8,5 @@
 - The corresponding paper is [this one](https://www.sciencedirect.com/science/article/pii/S0167637717302651)
 
 ## Final Project
-- The original final is the implementation of Tabu Search, which is a meta-heuristic
+- The final project is the implementation of Tabu Search, which is one of meta-heuristics algorithm.
 - The file only contains my work, which is the **Uncapacitated Facility Location Problem  (UFLP)**.
