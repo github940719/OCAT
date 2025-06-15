@@ -10,3 +10,4 @@
 ## Final Project
 - The final project is the implementation of Tabu Search, which is one of meta-heuristics algorithm.
 - The file only contains my work, which is the **Uncapacitated Facility Location Problem  (UFLP)**.
+- The slides include both UFLP and 2L-CVRP. The latter was conducted by my teammate.
