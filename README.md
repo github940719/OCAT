@@ -1,5 +1,5 @@
 # OCAT course repository
-- This repository is for the **Optimization Conectp and Application in Transportation**.
+- This repository is for the **Optimization Concept and Application in Transportation**.
 - This is a selective course in **Department of Transportation and Logistics Management (TLM)**. 
 
 ## Duo Assignment
