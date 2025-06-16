@@ -1,5 +1,5 @@
 import random
-import matplotlib.pyplot as plt
+import ast
 
 def genCoords(n, seed = None, lb = 0, ub = 100):
     if seed is not None:
@@ -22,15 +22,27 @@ def genDistMatrix(n, coords):
     return distMatrix
 
 
-def plotRoute(coords, route, color, legend):
-    # draw the point
-    for idx, (x, y) in enumerate(coords):
-        plt.text(x, y, str(idx), color = "black", fontsize = 12)
+def storeDistMatrix(n, distMatrix, path, optDist, optRoute, optTime):
+    with open(path, "w") as f:
+        f.write("the first, second, third, forth line is n, optDist, optRoute, optTime respectively\n")
+        f.write("the remaining lines are the distMatrix\n")
+        f.write(f"{n}\n")
+        f.write(f"{optDist}\n")
+        f.write(f"{optRoute}\n")
+        f.write(f"{optTime}\n\n")
+        for row in distMatrix:
+            f.write(" ".join(map(str, row)) + "\n")
 
-    # draw the route
-    routeX = [coords[i][0] for i in route]
-    routeY = [coords[i][1] for i in route]
-    plt.plot(routeX, routeY, color = color, linewidth = 2, label = legend)
-    plt.legend()
-    plt.title("TSP Route")
-    plt.show()
+
+def readDistMatrix(path):
+    with open(path, "r") as f:
+        lines = f.readlines()
+        n = int(lines[2].strip())
+        optDist = float(lines[3].strip())
+        optRoute = ast.literal_eval(lines[4].strip())
+        optTime = float(lines[5].strip())
+        distMatrix = []
+        for line in lines[7:]:
+            row = list(map(float, line.strip().split()))
+            distMatrix.append(row)
+    return n, distMatrix, optDist, optRoute, optTime
